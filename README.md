@@ -2,24 +2,31 @@
 ㅇEach DOCTOR in the system is identified by a Doctor ID. A DOCTOR is associated with a specific medical Department, identified by the
 Department ID. The DOCTOR has personal information such as Name, Address, Phone number, and a secure Password for system
 access.
+
 ㅇ A Nurse ID identifies NURSE entities. NURSEs are associated with a medical Department, specified by the Department ID. NURSEs also
 have personal details including Name, Address, Phone number, and a Password for system authentication.
+
 ㅇ Each PATIENT is uniquely identified by a Patient ID and is linked to a specific DOCTOR and NURSE through their respective IDs.
 PATIENTs have personal information, including Name, Social Security Number, Gender, Address, Blood Type, Height, Weight, and Phone
 Number. Additionally, each PATIENT has a Password for secure access to the system.
+
 ㅇ The medical specialties offered by the hospital are represented in the MEDICAL SPECIALTY table. Each medical specialty is identified by
 a unique Department ID. The table also stores the Department Name and Phone Number associated with each medical specialty.
+
 ㅇ For patients requiring hospitalization, the INPATIENT table captures relevant information such as Room Information, Admission Date,
 Discharge Date Time, and the corresponding Patient ID.
+
 ㅇ To manage appointment scheduling, the RESERVATION table is utilized. Each reservation is uniquely identified by a Reservation number
 and includes details such as Reservation Date Time, the Department ID for the medical specialty, and the associated Patient ID.
+
 ㅇ EXAMINATION records are maintained for each medical examination conducted. The table includes information such as Examination Date
 Time, Examination Details, and references to the attending DOCTOR and the corresponding PATIENT.
+
 ㅇ TREATMENT entries capture details of treatments administered by NURSEs. The table includes Treatment Date Time, Treatment Details,
 and references to the administering NURSE and the associated PATIENT.
 
 -----------------------
-#Project overview
+# Project overview
 ㅇRequired functionality
   - 아래 웹 페이지들을 구성한다
     1. DOCTOR, NURSE의 정보를 관리하는 관리자 페이지
