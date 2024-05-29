@@ -1,0 +1,94 @@
+<div class = "content">
+  <h1>{{ title }}</h1>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Address</td>
+    <td>Phone Number</td>
+    <td>Password</td>
+  </tr>
+  {{#each DoctorList}}
+    <form method="post">
+      <tr>
+        <td><input type="text" name="doctor_id" value={{doctor_id}}></td> 
+            <td><input type="text" name="name" value={{name}}></td> 
+            <td><input type="text" name="address" value={{address}}></td> 
+            <td><input type="text" name="phone_number" value={{phone_number}}></td> 
+            <td><input type="text" name="password" value={{password}}></td> 
+            <td><input type="submit" value="Modify" formaction="/manage/UpdateDoctor"></td>  
+        <td style="border: none; margin-left: 10px;">
+          <button 
+            style="margin-left: 10px;" 
+            name='delBtn' 
+            type="submit" 
+            value="{{doctor_id}}" 
+            formaction="/manage/DeleteDoctor"
+          >
+          delete
+          </button>
+        </td>
+      </tr>    
+    </form>
+  {{/each}}
+  <form method="post">
+      <tr>
+        <td><input type="text" name="new_doctor_id"></td>
+        <td><input type="text" name="new_name"></td>
+        <td><input type="text" name="new_address"></td>
+        <td><input type="text" name="new_phone_number"></td>
+        <td><input type="text" name="new_password"></td>
+        <td><input type="submit" value="Add" formaction="/manage/AddDoctor"></td>
+      </tr>
+    </form>
+</table>
+
+
+
+<h1>{{ title2 }}</h1>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Address</td>
+    <td>Phone Number</td>
+    <td>Password</td>
+  </tr>
+  {{#each NurseList}}
+    <form method="post">
+      <tr>
+            <td><input type="text" name="nurse_id" value={{nurse_id}}></td> 
+            <td><input type="text" name="name" value={{name}}></td> 
+            <td><input type="text" name="address" value={{address}}></td> 
+            <td><input type="text" name="phone_number" value={{phone_number}}></td> 
+            <td><input type="text" name="password" value={{password}}></td> 
+            <td><input type="submit" value="Modify" formaction="/manage/UpdateNurse"></td>     
+        <td style="border: none; margin-left: 10px;">
+          <button 
+            style="margin-left: 10px;" 
+            name='delBtn' 
+            type="submit" 
+            value="{{nurse_id}}" 
+            formaction="/manage/DeleteNurse"
+          >
+          delete
+          </button>
+        </td>
+      </tr>    
+    </form>
+  {{/each}}
+  <form method="post">
+      <tr>
+        <td><input type="text" name="new_nurse_id"></td>
+        <td><input type="text" name="new_name"></td>
+        <td><input type="text" name="new_address"></td>
+        <td><input type="text" name="new_phone_number"></td>
+        <td><input type="text" name="new_password"></td>
+        <td><input type="submit" value="Add" formaction="/manage/AddNurse"></td>
+      </tr>
+    </form>
+</table>
+
+</div>

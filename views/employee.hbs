@@ -1,0 +1,82 @@
+<div class = "content">
+  <h1>{{ title }}</h1>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Date Time</td>
+    <td>Details</td>
+  </tr>
+  {{#each ExaminationList}}
+    <form method="post">
+      <tr>
+        <td><input type="text" name="examination_id" value={{examination_id}}></td> 
+        <td><input type="text" name="examinaton_date_time" value={{examinaton_date_time}}></td> 
+        <td><input type="text" name="examination_details" value={{examination_details}}></td> 
+        <td><input type="submit" value="Modify" formaction="/employee/UpdateExamination"></td>  
+        <td style="border: none; margin-left: 10px;">
+          <button 
+            style="margin-left: 10px;" 
+            name='delBtn' 
+            type="submit" 
+            value="{{examination_id}}" 
+            formaction="/employee/DeleteExamination"
+          >
+          delete
+          </button>
+        </td>
+      </tr>    
+    </form>
+  {{/each}}
+  <form method="post">
+      <tr>
+        <td><input type="text" name="new_examination_id"></td>
+        <td><input type="text" name="new_examination_date_time"></td>
+        <td><input type="text" name="new_examination_details"></td>
+        <td><input type="submit" value="Add" formaction="/employee/AddExamination"></td>
+      </tr>
+    </form>
+</table>
+
+
+
+<h1>{{ title2 }}</h1>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Date Time</td>
+    <td>Details</td>
+  </tr>
+  {{#each TreatmentList}}
+    <form method="post">
+      <tr>
+        <td><input type="text" name="treatment_id" value={{treatment_id}}></td> 
+            <td><input type="text" name="treatment_date_time" value={{treatment_date_time}}></td> 
+            <td><input type="text" name="treatment_details" value={{treatment_details}}></td> 
+            <td><input type="submit" value="Modify" formaction="/employee/UpdateTreatment"></td>  
+        <td style="border: none; margin-left: 10px;">
+          <button 
+            style="margin-left: 10px;" 
+            name='delBtn' 
+            type="submit" 
+            value="{{treatment_id}}" 
+            formaction="/employee/DeleteTreatment"
+          >
+          delete
+          </button>
+        </td>
+      </tr>    
+    </form>
+  {{/each}}
+  <form method="post">
+      <tr>
+        <td><input type="text" name="new_treatment_id"></td>
+        <td><input type="text" name="new_treatment_date_time"></td>
+        <td><input type="text" name="new_treatment_details"></td>
+        <td><input type="submit" value="Add" formaction="/employee/AddTreatment"></td>
+      </tr>
+    </form>
+</table>
+
+</div>

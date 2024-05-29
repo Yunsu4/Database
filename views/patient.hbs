@@ -1,0 +1,75 @@
+<div class = "content">
+  <h1>patient ID-{{ user }}</h1>
+  <h2>{{ title }}</h2>
+  
+
+<table>
+  <tr>
+    <td>Reservation Number</td>
+    <td>Date Time</td>
+    <td>Patient id</td>
+    <td>Medical Specialty Department Id</td>
+  </tr>
+  {{#each ReservationList}}
+    <form method="post">
+      <tr>
+        <td><input type="text" name="reservation_number" value={{reservation_number}}></td> 
+            <td><input type="text" name="reservation_date_time" value={{reservation_date_time}}></td> 
+            <td>{{PATIENT_patient_id}}</td>
+            <td><input type="text" name="MEDICAL_SPECIALTY_department_id" value={{MEDICAL_SPECIALTY_department_id}}></td> 
+            <td><input type="submit" value="Modify" formaction="/patient/UpdateReservation"></td>  
+        <td style="border: none; margin-left: 10px;">
+          <button 
+            style="margin-left: 10px;" 
+            name='delBtn' 
+            type="submit" 
+            value="{{reservation_number}}" 
+            formaction="/patient/DeleteReservation"
+          >
+          delete
+          </button>
+        </td>
+      </tr>    
+    </form>
+  {{/each}}
+  <form method="post">
+      <tr>
+        <td><input type="text" name="new_reservation_number"></td>
+        <td><input type="text" name="new_reservation_date_time"></td>
+        <td>{{new_PATIENT_patient_id}}</td>
+        <td><input type="text" name="new_MEDICAL_SPECIALTY_department_id"></td>
+        <td><input type="submit" value="Add" formaction="/patient/AddReservation"></td>
+      </tr>
+    </form>
+</table>
+
+
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  input[type="text"] {
+    border: 1px solid #dddddd;
+    padding: 5px;
+  }
+
+  input[type="submit"], button {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    cursor: pointer;
+  }
+</style>
+
